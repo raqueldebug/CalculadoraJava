@@ -9,7 +9,7 @@ public class Calculadora {
         Scanner input = new Scanner(System.in);
 
         int memoria;
-        int operador;
+        int selecione;
         double ms = 0;
         double valor_1;
         double valor_2;
@@ -17,19 +17,7 @@ public class Calculadora {
 
         while (true) {
 
-            // DESEJA CONTINUAR?
-
-            System.out.print("\nDeseja continuar?");
-            System.out.print("\n1 - Sim / 0 - Sair: ");
-            
-            memoria = input.nextInt();
-
-            if (memoria == 0) {
-                System.out.print("\nOperacao finalizada");
-                break;
-            }
-
-            // INSERIR NUMEROS E OPERADOR
+            // INSERIR NUMEROS
 
             System.out.print("\nInsira o primeiro numero: ");
             valor_1 = input.nextInt();
@@ -37,36 +25,38 @@ public class Calculadora {
             System.out.print("\nInsira o segundo numero: ");
             valor_2 = input.nextInt();
 
+            // SELECIONAR OPERADOR           
+
             System.out.print("\nO que voce deseja fazer com os numeros acima?");
             System.out.print("\n1 - Somar / 2 - Subtrair / 3 - Multiplicar / 4 - Dividir / 0 - Sair: ");
-            operador = input.nextInt();
+            selecione = input.nextInt();
 
-            if (operador == 0) {
+            if (selecione == 0) {
                 System.out.print("\nOperacaoo finalizada");
                 break;
             }
             
-            if (operador == 1) {
+            if (selecione == 1) {
                 resultado = valor_1 + valor_2;
                 System.out.printf("\nResultado da soma = %f%n", resultado);
             }
 
-            if (operador == 2) {
+            if (selecione == 2) {
                 resultado = valor_1 - valor_2;
                 System.out.printf("\nResultado da subtracao = %f%n", resultado);
             }
 
-            if (operador == 3) {
+            if (selecione == 3) {
                 resultado = valor_1 * valor_2;
                 System.out.printf("\nResultado da multiplicacao = %f%n", resultado);
             }
 
-            if (operador == 4) {
+            if (selecione== 4) {
                 resultado = valor_1 / valor_2;
                 System.out.printf("\nResultado da divisao = %f%n", resultado);
             }
             
-            if (operador < 1 || operador > 4) {
+            if (selecione < 1 || selecione > 4) {
                 System.out.print("\nOperador invalido.");
                 break;
             }
@@ -104,6 +94,18 @@ public class Calculadora {
                 System.out.print("\nEntrada invalida, o valor nao foi salvo.");
                 System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
                 continue;
+            }
+
+            // DESEJA CONTINUAR?
+
+            System.out.print("\nDeseja continuar?");
+            System.out.print("\n1 - Sim / 0 - Sair: ");
+            
+            selecione = input.nextInt();
+
+            if (selecione == 0) {
+                System.out.print("\nOperacao finalizada");
+                break;
             }
         }
 	}
