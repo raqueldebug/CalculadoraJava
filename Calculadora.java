@@ -32,7 +32,7 @@ public class Calculadora {
             selecione = input.nextInt();
 
             if (selecione == 0) {
-                System.out.print("\nOperacaoo finalizada");
+                System.out.print("\nOperacao finalizada");
                 break;
             }
             
