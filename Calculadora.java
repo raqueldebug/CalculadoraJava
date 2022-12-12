@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import Apoio.Matematica;
 
 public class Calculadora { 
 	
@@ -7,12 +8,13 @@ public class Calculadora {
         System.out.println("\nCalculadora");
 
         Scanner input = new Scanner(System.in);
+        Matematica m = new Matematica();
 
         int memoria;
         int selecione;
         double ms = 0;
-        double valor_1;
-        double valor_2;
+        double valor1;
+        double valor2;
         double resultado = 0;
 
         while (true) {
@@ -20,10 +22,10 @@ public class Calculadora {
             // INSERIR NUMEROS
 
             System.out.print("\nInsira o primeiro numero: ");
-            valor_1 = input.nextInt();
+            valor1 = input.nextInt();
 
             System.out.print("\nInsira o segundo numero: ");
-            valor_2 = input.nextInt();
+            valor2 = input.nextInt();
 
             // SELECIONAR OPERADOR           
 
@@ -37,23 +39,23 @@ public class Calculadora {
             }
             
             if (selecione == 1) {
-                resultado = valor_1 + valor_2;
-                System.out.printf("\nResultado da soma = %f%n", resultado);
+                m.somar(valor1, valor2);
+                System.out.printf("\nResultado da soma = %f%n", m.resultado);
             }
 
             if (selecione == 2) {
-                resultado = valor_1 - valor_2;
-                System.out.printf("\nResultado da subtracao = %f%n", resultado);
+                m.subtrair(valor1, valor2);
+                System.out.printf("\nResultado da subtracao = %f%n", m.resultado);
             }
 
             if (selecione == 3) {
-                resultado = valor_1 * valor_2;
-                System.out.printf("\nResultado da multiplicacao = %f%n", resultado);
+                m.multiplicar(valor1, valor2);
+                System.out.printf("\nResultado da multiplicacao = %f%n", m.resultado);
             }
 
             if (selecione== 4) {
-                resultado = valor_1 / valor_2;
-                System.out.printf("\nResultado da divisao = %f%n", resultado);
+                m.dividir(valor1, valor2);
+                System.out.printf("\nResultado da divisao = %f%n", m.resultado);
             }
             
             if (selecione < 1 || selecione > 4) {
@@ -69,13 +71,13 @@ public class Calculadora {
             memoria = input.nextInt();
             
             if (memoria == 1) {
-                ms += resultado;
+                ms += m.resultado;
                 System.out.print("\nO resultado foi somado ao valor da memoria.");
                 System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
             }
             
             if (memoria == 2) {
-                ms -= resultado;
+                ms -= m.resultado;
                 System.out.print("\nO resultado foi subtraido do valor da memoria.");
                 System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
             }
