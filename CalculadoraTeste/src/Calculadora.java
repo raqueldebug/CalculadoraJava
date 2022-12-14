@@ -1,6 +1,6 @@
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 import Apoio.Matematica;
+import javax.swing.JOptionPane;
 
 public class Calculadora { 
 	
