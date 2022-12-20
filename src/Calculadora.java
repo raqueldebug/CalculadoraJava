@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 import Apoio.Matematica;
 
@@ -6,9 +5,8 @@ public class Calculadora {
 	
 	public static void main(String[] args) {
 
-        System.out.println("\nCalculadora");
+        JOptionPane.showMessageDialog(null, "Calculadora");
 
-        Scanner input = new Scanner(System.in);
         Matematica m = new Matematica();
 
         int memoria;
@@ -16,8 +14,7 @@ public class Calculadora {
         double ms = 0;
         double valor1;
         double valor2;
-        double resultado = 0;
-
+        
         while (true) {
 
             // INSERIR NUMEROS
@@ -32,7 +29,7 @@ public class Calculadora {
 
             // SELECIONAR OPERADOR           
 
-            String insert3 = JOptionPane.showInputDialog("O que voce deseja fazer com os numeros digitados?\n1 - Somar / 2 - Subtrair / 3 - Multiplicar / 4 - Dividir / 0 - Sair:");
+            String insert3 = JOptionPane.showInputDialog("O que voce deseja fazer com os numeros digitados?\n1 - Somar\n2 - Subtrair\n3 - Multiplicar\n4 - Dividir\n0 - Sair");
             selecione = Integer.parseInt(insert3);
             
             if (selecione == 0) {
@@ -42,73 +39,69 @@ public class Calculadora {
             
             if (selecione == 1) {
                 m.somar(valor1, valor2);
-                System.out.printf("\nResultado da soma = %f%n", m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da soma = " + m.resultado);
             }
 
             if (selecione == 2) {
                 m.subtrair(valor1, valor2);
-                System.out.printf("\nResultado da subtracao = %f%n", m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da subtracao = " + m.resultado);
             }
 
             if (selecione == 3) {
                 m.multiplicar(valor1, valor2);
-                System.out.printf("\nResultado da multiplicacao = %f%n", m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da multiplicação = " + m.resultado);
+                
             }
 
             if (selecione== 4) {
                 m.dividir(valor1, valor2);
-                System.out.printf("\nResultado da divisao = %f%n", m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da divisão = " + m.resultado);
             }
             
             if (selecione < 1 || selecione > 4) {
                 System.out.print("\nOperador invalido.");
+                JOptionPane.showMessageDialog(null, "Operador invalido.");
                 break;
             }
 
             // ARMAZENAR O RESULTADO
 
-            System.out.print("\nDeseja armazenar o resultado na memoria (MS)?");
-            System.out.print("\n1 - Somar (M+) / 2 - Subtrair (M-) / 3 - Nao Armazenar / 0 - Sair: ");
+            String insert4 = JOptionPane.showInputDialog("Deseja armazenar o resultado na memoria (MS)?\n1 - Somar (M+)\n2 - Subtrair (M-)\n3 - Nao Armazenar\n0 - Sair");
             
-            memoria = input.nextInt();
+            memoria = Integer.parseInt(insert4);
             
             if (memoria == 1) {
                 ms += m.resultado;
-                System.out.print("\nO resultado foi somado ao valor da memoria.");
-                System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
+                JOptionPane.showMessageDialog(null, "O resultado foi somado ao valor da memoria.\nMemoria armazenada (MS) = " + ms);
             }
             
             if (memoria == 2) {
                 ms -= m.resultado;
-                System.out.print("\nO resultado foi subtraido do valor da memoria.");
-                System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
+                JOptionPane.showMessageDialog(null, "O resultado foi subtraido ao valor da memoria.\nMemoria armazenada (MS) = " + ms);
             }
 
             if (memoria == 3) {
-                System.out.print("\nO valor da memoria nao foi alterado.");
-                System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
+                JOptionPane.showMessageDialog(null, "O valor da memoria nao foi alterado.\nMemoria armazenada (MS) = " + ms);
                 continue;
             }
             if (memoria == 0) {
-                System.out.print("\nOperacao finalizada");
+                JOptionPane.showMessageDialog(null, "Operação finalizada.");
                 break;
             }
             
             if (memoria < 0 || memoria > 3) {
-                System.out.print("\nEntrada invalida, o valor nao foi salvo.");
-                System.out.printf("\nMemoria armazenada (MS) = %f%n", ms);
+                JOptionPane.showMessageDialog(null, "Entrada invalida, o valor nao foi salvo.\nMemoria armazenada (MS) = " + ms);
                 continue;
             }
 
             // DESEJA CONTINUAR?
 
-            System.out.print("\nDeseja continuar?");
-            System.out.print("\n1 - Sim / 0 - Sair: ");
+            String insert5 = JOptionPane.showInputDialog("Deseja continuar?\n1 - Sim\n0 - Sair:");
             
-            selecione = input.nextInt();
+            selecione = Integer.parseInt(insert5);
 
             if (selecione == 0) {
-                System.out.print("\nOperacao finalizada");
+                JOptionPane.showMessageDialog(null, "Operação finalizada.");
                 break;
             }
         }
