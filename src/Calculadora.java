@@ -39,23 +39,23 @@ public class Calculadora {
             
             if (selecione == 1) {
                 m.somar(valor1, valor2);
-                JOptionPane.showMessageDialog(null, "Resultado da soma = " + m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da soma = " + m.getResultado());
             }
 
             if (selecione == 2) {
                 m.subtrair(valor1, valor2);
-                JOptionPane.showMessageDialog(null, "Resultado da subtracao = " + m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da subtracao = " + m.getResultado());
             }
 
             if (selecione == 3) {
                 m.multiplicar(valor1, valor2);
-                JOptionPane.showMessageDialog(null, "Resultado da multiplicação = " + m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da multiplicação = " + m.getResultado());
                 
             }
 
             if (selecione== 4) {
                 m.dividir(valor1, valor2);
-                JOptionPane.showMessageDialog(null, "Resultado da divisão = " + m.resultado);
+                JOptionPane.showMessageDialog(null, "Resultado da divisão = " + m.getResultado());
             }
             
             if (selecione < 1 || selecione > 4) {
@@ -71,12 +71,12 @@ public class Calculadora {
             memoria = Integer.parseInt(insert4);
             
             if (memoria == 1) {
-                ms += m.resultado;
+                ms += m.getResultado();
                 JOptionPane.showMessageDialog(null, "O resultado foi somado ao valor da memoria.\nMemoria armazenada (MS) = " + ms);
             }
             
             if (memoria == 2) {
-                ms -= m.resultado;
+                ms -= m.getResultado();
                 JOptionPane.showMessageDialog(null, "O resultado foi subtraido ao valor da memoria.\nMemoria armazenada (MS) = " + ms);
             }
 
