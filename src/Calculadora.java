@@ -32,10 +32,15 @@ public class Calculadora {
             String insert3 = JOptionPane.showInputDialog("O que voce deseja fazer com os numeros digitados?\n1 - Somar\n2 - Subtrair\n3 - Multiplicar\n4 - Dividir\n0 - Sair");
             selecione = Integer.parseInt(insert3);
             
-            if (selecione == 0) {
-            	JOptionPane.showMessageDialog(null, "Operação finalizada.");
+		
+		switch(selecione){
+			case 0:
+				JOptionPane.showMessageDialog(null, "Operação finalizada.");
                 break;
-            }
+		
+		}
+		
+           
             
             if (selecione == 1) {
                 m.somar(valor1, valor2);
